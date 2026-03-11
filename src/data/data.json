@@ -1,0 +1,204 @@
+{
+  "Header": {
+    "title": "Design • Develop • Dominate",
+    "paragraph": "Unlock your brand’s potential with stunning graphics and innovative web solutions. Join us to create a lasting impact and achieve your business goals"
+  },
+  "About": {
+    "paragraph": "Founded in 2019, Blinkstar Designs began its journey as a creative powerhouse specializing in graphic design. Our passion for visual storytelling and innovation quickly garnered attention, allowing us to build a strong foundation in the design community.In 2024, we expanded our horizons by introducing web development and software engineering services. This evolution reflects our commitment to providing comprehensive solutions that cater to the diverse needs of our clients.",
+    "Why": ["Experience", "Creative Solutions"],
+    "Why2": ["Innovative Technology", "Proven Track Record"]
+  },
+  "Gallery": [
+    {
+      "title": "Project Title",
+      "largeImage": "img/portfolio/01-large.jpg",
+      "smallImage": "img/portfolio/01-small.jpg"
+    },
+    {
+      "title": "Project Title",
+      "largeImage": "img/portfolio/02-large.jpg",
+      "smallImage": "img/portfolio/02-small.jpg"
+    },
+    {
+      "title": "Project Title",
+      "largeImage": "img/portfolio/03-large.jpg",
+      "smallImage": "img/portfolio/03-small.jpg"
+    },
+    {
+      "title": "Project Title",
+      "largeImage": "img/portfolio/04-large.jpg",
+      "smallImage": "img/portfolio/04-small.jpg"
+    },
+    {
+      "title": "Project Title",
+      "largeImage": "img/portfolio/05-large.jpg",
+      "smallImage": "img/portfolio/05-small.jpg"
+    },
+    {
+      "title": "Project Title",
+      "largeImage": "img/portfolio/06-large.jpg",
+      "smallImage": "img/portfolio/06-small.jpg"
+    },
+    {
+      "title": "Project Title",
+      "largeImage": "img/portfolio/07-large.jpg",
+      "smallImage": "img/portfolio/07-small.jpg"
+    },
+    {
+      "title": "Project Title",
+      "largeImage": "img/portfolio/08-large.jpg",
+      "smallImage": "img/portfolio/08-small.jpg"
+    },
+    {
+      "title": "Project Title",
+      "largeImage": "img/portfolio/09-large.jpg",
+      "smallImage": "img/portfolio/09-small.jpg"
+    }
+  ],
+  "Services": [
+    {
+      "icon": "fa fa-wordpress",
+      "name": "Graphic Design",
+      "text": "We create visually stunning graphics that capture your brand's essence. From logos and branding to marketing materials and social media graphics, our designs are tailored to make a lasting impression."
+    },
+    {
+      "icon": "fa fa-cart-arrow-down",
+      "name": "Web Development",
+      "text": "Our web development team builds responsive, user-friendly websites that not only look great but also function seamlessly. We focus on enhancing user experience and optimizing performance to help your business thrive online."
+    },
+    {
+      "icon": "fa fa-cloud-download",
+      "name": "Software Engineering",
+      "text": "We offer custom software solutions designed to meet your specific business needs. Our development process ensures robust, scalable applications that drive efficiency and innovation."
+    },
+    {
+      "icon": "fa fa-language",
+      "name": "Branding",
+      "text": "We help you establish a strong brand identity through comprehensive branding strategies, including logo design, color schemes, typography, and messaging that resonate with your audience."
+    },
+    {
+      "icon": "fa fa-plane",
+      "name": "Digital Marketing",
+      "text": "Maximize your online presence with our digital marketing services. We provide SEO, content marketing, and social media management to help you reach and engage your target audience effectively."
+    },
+    {
+      "icon": "fa fa-pie-chart",
+      "name": "Consultation Services",
+      "text": "Not sure where to start? Our experts are here to guide you through the process, providing insights and strategies to help you make informed decisions for your projects."
+    }
+  ],
+  "Testimonials": [
+    {
+      "img": "img/testimonials/01.jpg",
+      "text": "\"Blinkstar Designs transformed our brand identity completely. Their creative approach and attention to detail exceeded our expectations. Highly recommended!\"",
+      "name": "Sarah Johnson",
+      "company": "Tech Startup CEO"
+    },
+    {
+      "img": "img/testimonials/02.jpg",
+      "text": "\"The website they built for us is not only beautiful but also highly functional. Our conversion rates have increased significantly since the launch.\"",
+      "name": "Michael Chen",
+      "company": "E-commerce Director"
+    },
+    {
+      "img": "img/testimonials/03.jpg",
+      "text": "\"Working with Blinkstar Designs was a pleasure. They understood our vision and brought it to life with exceptional design and development skills.\"",
+      "name": "Emily Rodriguez",
+      "company": "Marketing Manager"
+    },
+    {
+      "img": "img/testimonials/04.jpg",
+      "text": "\"Their software engineering team developed a custom solution that streamlined our operations. Professional, efficient, and innovative.\"",
+      "name": "David Thompson",
+      "company": "Operations Director"
+    },
+    {
+      "img": "img/testimonials/05.jpg",
+      "text": "\"The digital marketing strategies they implemented helped us reach a wider audience. Our social media engagement has tripled!\"",
+      "name": "Lisa Anderson",
+      "company": "Brand Manager"
+    },
+    {
+      "img": "img/testimonials/06.jpg",
+      "text": "\"From concept to completion, Blinkstar Designs delivered exceptional results. Their team is responsive, creative, and truly professional.\"",
+      "name": "Robert Williams",
+      "company": "Entrepreneur"
+    }
+  ],
+  "Team": [
+    {
+      "img": "img/team/01.jpg",
+      "name": "John Doe",
+      "job": "Director"
+    },
+    {
+      "img": "img/team/02.jpg",
+      "name": "Mike Doe",
+      "job": "Senior Designer"
+    },
+    {
+      "img": "img/team/03.jpg",
+      "name": "Jane Doe",
+      "job": "Senior Designer"
+    },
+    {
+      "img": "img/team/04.jpg",
+      "name": "Karen Doe",
+      "job": "Project Manager"
+    }
+  ],
+  "Contact": {
+    "phone": "+263 78 293 1905",
+    "email": "blinktechcreatives@gmail.com",
+    "facebook": "https://www.facebook.com/profile.php?id=61584424251054",
+    "instagram": "https://www.instagram.com/blinktech_creatives?igsh=bzA0NHFpcGc5NnJi&utm_source=qr"
+  },
+  "FAQ": [
+    {
+      "question": "How long does a typical project take?",
+      "answer": "Project timelines vary depending on scope and complexity. A simple website typically takes 2-4 weeks, while comprehensive branding projects may take 6-8 weeks. We'll provide a detailed timeline during our initial consultation."
+    },
+    {
+      "question": "Do you provide ongoing support after project completion?",
+      "answer": "Yes! We offer maintenance packages and ongoing support to ensure your website or application continues to perform optimally. We can discuss support options that fit your needs."
+    },
+    {
+      "question": "What is your pricing structure?",
+      "answer": "Our pricing is customized based on your specific project requirements. We offer transparent quotes after understanding your needs. Contact us for a free consultation and detailed estimate."
+    },
+    {
+      "question": "Can you work with our existing brand guidelines?",
+      "answer": "Absolutely! We can work within your existing brand guidelines or help you develop new ones. Our team is flexible and adapts to your brand's unique requirements."
+    },
+    {
+      "question": "Do you handle website hosting and domain setup?",
+      "answer": "Yes, we can assist with hosting setup and domain configuration. We work with reliable hosting providers and can recommend the best options for your specific needs."
+    },
+    {
+      "question": "What makes Blinkstar Designs different from other agencies?",
+      "answer": "We combine creative design expertise with technical development skills, offering a comprehensive solution under one roof. Our client-centric approach ensures personalized service and results that exceed expectations."
+    }
+  ],
+  "Features": [
+    {
+      "icon": "fa fa-rocket",
+      "title": "Fast Delivery",
+      "text": "We understand the importance of deadlines. Our team works efficiently to deliver high-quality projects on time, every time."
+    },
+    {
+      "icon": "fa fa-users",
+      "title": "Expert Team",
+      "text": "Our skilled professionals bring years of experience in design, development, and digital strategy to every project."
+    },
+    {
+      "icon": "fa fa-mobile",
+      "title": "Responsive Design",
+      "text": "All our solutions are fully responsive, ensuring your brand looks perfect on every device and screen size."
+    },
+    {
+      "icon": "fa fa-heart",
+      "title": "Client Satisfaction",
+      "text": "Your success is our priority. We work closely with you to ensure the final product exceeds your expectations."
+    }
+  ]
+}
