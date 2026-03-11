@@ -1,9 +1,6 @@
-import React, { useState } from "react";
+import React from "react";
 
 export const About = (props) => {
-
-  
-
   return (
     <div id="about">
       <div className="container">
