@@ -1,43 +1,3 @@
-// import React from "react";
-// import { Link } from "react-router-dom";
-
-// export const Services = (props) => {
-//   return (
-//     <div id="services" className="text-center">
-//       <div className="container">
-//         <div className="section-title">
-//           <h2>Our Services</h2>
-//           <p>
-//             Comprehensive solutions to elevate your brand and drive your
-//             business forward
-//           </p>
-//         </div>
-//         <div className="row">
-//           {props.data
-//             ? props.data.map((d, i) => (
-//                 <div key={`${d.name}-${i}`} className="col-md-4 fade-in">
-//                   {" "}
-//                   <div className="service-desc">
-//                     <i className={d.icon}></i>
-//                     <h3>{d.name}</h3>
-//                     <p>{d.text}</p>
-//                   </div>
-//                 </div>
-//               ))
-//             : "loading"}
-//         </div>
-//         <div className="row" style={{ marginTop: "50px" }}>
-//           <div className="col-md-12">
-//             <Link to="/contact" className="btn btn-custom btn-lg">
-//               Learn More
-//             </Link>
-//           </div>
-//         </div>
-//       </div>
-//     </div>
-//   );
-// };
-
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
@@ -80,9 +40,9 @@ export const Services = (props) => {
     },
     {
       icon: "fa fa-bullhorn",
-      name: "Social Media Management",
+      name: "SEO",
       text: "Strategic campaigns that boost your online presence, engage your target audience, and drive conversions.",
-      link: "/services/social-media",
+      link: "/services/seo",
     },
   ];
 
@@ -439,40 +399,64 @@ export const Services = (props) => {
                     {service.text}
                   </motion.p>
 
-                  {/* Get Started Link */}
-                  <motion.div
-                    variants={linkVariants}
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true }}
-                    whileHover="hover"
-                    style={{ marginTop: "20px" }}
-                  >
-                    <Link
-                      to={service.link}
-                      style={{
-                        display: "inline-flex",
-                        alignItems: "center",
-                        color: "#ffffff",
-                        textDecoration: "none",
-                        fontWeight: "600",
-                        fontSize: "15px",
-                        textTransform: "uppercase",
-                        letterSpacing: "0.5px",
-                        transition: "all 0.3s ease",
-                        borderBottom: "2px solid transparent",
-                        paddingBottom: "4px",
-                      }}
-                      onMouseEnter={(e) => {
-                        e.currentTarget.style.borderBottomColor = "#0A1A3B";
-                      }}
-                      onMouseLeave={(e) => {
-                        e.currentTarget.style.borderBottomColor = "transparent";
-                      }}
+                  {/* Get Started Link - Only shows on services page (not homepage) */}
+                  {!isHomePage && (
+                    <motion.div
+                      variants={linkVariants}
+                      initial="hidden"
+                      whileInView="visible"
+                      viewport={{ once: true }}
+                      whileHover="hover"
+                      style={{ marginTop: "20px" }}
                     >
-                      Get Started
-                    </Link>
-                  </motion.div>
+                      <motion.div
+                        animate={{
+                          textShadow: [
+                            "0 0 2px rgba(10, 26, 59, 0.3)",
+                            "0 0 8px rgba(10, 26, 59, 0.6)",
+                            "0 0 2px rgba(10, 26, 59, 0.3)",
+                          ],
+                        }}
+                        transition={{
+                          duration: 2,
+                          repeat: Infinity,
+                          repeatType: "reverse",
+                          ease: "easeInOut",
+                        }}
+                        style={{
+                          display: "inline-block",
+                        }}
+                      >
+                        <Link
+                          to={service.link}
+                          style={{
+                            display: "inline-flex",
+                            alignItems: "center",
+                            color: "#ffffff",
+                            textDecoration: "none",
+                            fontWeight: "600",
+                            fontSize: "15px",
+                            textTransform: "uppercase",
+                            letterSpacing: "0.5px",
+                            transition: "all 0.3s ease",
+                            borderBottom: "2px solid transparent",
+                            paddingBottom: "4px",
+                          }}
+                          onMouseEnter={(e) => {
+                            e.currentTarget.style.borderBottomColor = "#0A1A3B";
+                            e.currentTarget.style.color = "#0A1A3B";
+                          }}
+                          onMouseLeave={(e) => {
+                            e.currentTarget.style.borderBottomColor =
+                              "transparent";
+                            e.currentTarget.style.color = "#ffffff";
+                          }}
+                        >
+                          Get Started
+                        </Link>
+                      </motion.div>
+                    </motion.div>
+                  )}
 
                   <motion.div
                     className="shine"
