@@ -34,9 +34,9 @@ export const Services = (props) => {
     },
     {
       icon: "fa fa-bullseye",
-      name: "Digital Marketing",
-      text: "Strategic campaigns that boost your online presence, engage your target audience, and drive conversions.",
-      link: "/services/digital-marketing",
+      name: "Social Media Management",
+      text: "Strategy, content, and community management for growth on social platforms with measurable ROI.",
+      link: "/services/social-media-management",
     },
     {
       icon: "fa fa-bullhorn",

@@ -143,7 +143,7 @@ export const Navigation = (props) => {
         <div className="navbar-header">
           <Link className="navbar-brand" to="/" onClick={closeMenu}>
             <img
-              src="img/bt logo.png"
+              src="/img/bt%20logo.png"
               alt="Logo"
               style={{ width: "225px", height: "auto" }}
             />

@@ -3,39 +3,48 @@ import { useParams, Link } from "react-router-dom";
 
 const serviceContent = {
   "web-design": {
-    title: "Web Design",
+    title: "Web Development",
     subtitle: "Modern, responsive websites for growth-focused brands",
     description:
       "From discovery to deployment, we craft visually stunning and user-centric web experiences.",
-    features: [
-      "Discovery + user research",
-      "Wireframes + high-fidelity prototypes",
-      "Responsive UI/UX for all devices",
-      "Design system and style guide",
-      "Figma/Adobe XD source delivery",
-    ],
-    benefits: [
-      "Stronger brand trust and conversion",
-      "Faster time to market with reusable components",
-      "Mobile-first design and accessibility",
-    ],
+
     packages: [
       {
-        name: "Starter",
-        price: "$1,200",
-        details: ["Up to 5 pages", "Basic branding integration", "1 revision"],
+        name: "Basic Website",
+        price: "$130",
+        details: [
+          "Up to 5 Responsive pages",
+          "6 months Free Hosting",
+          "1 Year Free Domain .co.zw",
+          "3 Professional Emails",
+          "Mobile Friendly",
+          "Contact Form",
+        ],
       },
       {
-        name: "Growth",
-        price: "$2,500",
-        details: ["Up to 10 pages", "Custom animations", "3 revisions"],
+        name: "Standard Website",
+        price: "$180",
+        details: [
+          "Up to 10 Responsive pages",
+          "Mobile Friendly",
+          "3 Professional Emails",
+          "1 Year Free Domain .co.zw",
+          "6 months Free Hosting",
+          "Contact Form",
+          "Basic SEO",
+        ],
       },
       {
-        name: "Scale",
-        price: "$4,500",
+        name: "Advanced",
+        price: "$300",
         details: [
           "Unlimited pages",
-          "Design system + components",
+          "1 Year Free Domain .co.zw",
+          "Mobile Friendly",
+          "10 Professional Emails",
+          "1 Year Free Hosting",
+          "Contact Form",
+          "Advanced SEO",
           "Ongoing designer support",
         ],
       },
@@ -46,18 +55,6 @@ const serviceContent = {
     subtitle: "Secure, scalable hosting packages with 99.9% uptime",
     description:
       "Choose a hosting plan built for performance, security, and easy maintenance.",
-    features: [
-      "SSD storage and HTTP/2 support",
-      "Free SSL and daily backups",
-      "DDoS protection",
-      "Uptime monitoring + alerts",
-      "Easy control panel and one-click deploy",
-    ],
-    benefits: [
-      "Reliable site speed and availability",
-      "Secure customer data handling",
-      "Effortless hosting management",
-    ],
     packages: [
       {
         name: "Basic",
@@ -91,18 +88,6 @@ const serviceContent = {
     subtitle: "Professional email with advanced security and syncing",
     description:
       "Robust, spam-checked email accounts for teams with practical collaboration tools.",
-    features: [
-      "IMAP/POP/SMTP support",
-      "Spam filtering and virus scanning",
-      "50 GB storage per mailbox",
-      "Mobile sync (iOS/Android)",
-      "Webmail and Outlook/Gmail integration",
-    ],
-    benefits: [
-      "Brand consistent professional communications",
-      "Higher deliverability and reduced spam",
-      "Simple provisioning and control",
-    ],
     packages: [
       {
         name: "Essential",
@@ -134,18 +119,6 @@ const serviceContent = {
     subtitle: "Visual brand experiences that make you unforgettable",
     description:
       "Logo, brand identity, and marketing collateral that resonate and convert.",
-    // features: [
-    //   "Logo and brand guideline creation",
-    //   "Print and digital marketing templates",
-    //   "Social media design kits",
-    //   "Illustration and iconography",
-    //   "Adaptations for all formats",
-    // ],
-    // benefits: [
-    //   "Cohesive identity across channels",
-    //   "Faster creative production",
-    //   "Improved brand recognition",
-    // ],
     packages: [
       {
         name: "Basic Bundle",
@@ -185,45 +158,39 @@ const serviceContent = {
       },
     ],
   },
-  "digital-marketing": {
-    title: "Digital Marketing",
-    subtitle: "Data-driven campaigns that grow traffic and conversions",
+  "social-media-management": {
+    title: "Social Media Management",
+    subtitle: "Data-driven social media growth and brand engagement",
     description:
-      "SEO, PPC, and content strategy focused on measurable ROI and qualified leads.",
-    features: [
-      "SEO audit and on-page optimization",
-      "Content strategy and production",
-      "PPC management (Google/Facebook)",
-      "Social media growth and engagement",
-      "Monthly reporting and analytics",
-    ],
-    benefits: [
-      "Increased website traffic",
-      "Better lead quality",
-      "Scalable digital channel performance",
-    ],
+      "Content strategy, paid social, and community management to grow awareness and conversions.",
     packages: [
       {
-        name: "Launch",
-        price: "$700/month",
-        details: ["SEO fundamentals", "1 PPC campaign", "Monthly report"],
-      },
-      {
-        name: "Accelerate",
-        price: "$1,500/month",
+        name: "Basic Bundle",
+        price: "$60/month",
         details: [
-          "Content production",
-          "Multi-channel PPC",
-          "Bi-weekly analysis",
+          "3 Flyer Designs",
+          "1 Fcaebook Cover",
+          "1 Sponsored AD(7days)",
+          "Interaction with Clients",
         ],
       },
       {
-        name: "Dominant",
-        price: "$3,000/month",
+        name: "Standard Bundle",
+        price: "$80/month",
         details: [
-          "Full-funnel strategy",
-          "Advanced conversion optimization",
-          "Dedicated growth manager",
+          "4 Flyer Designs",
+          "1 Fcaebook Cover",
+          "2 Sponsored AD(14 days)",
+          "Interaction with Clients",
+        ],
+      },
+      {
+        name: "Premium Bundle",
+        price: "$130/month",
+        details: [
+          "6 Flyer Designs",
+          "3 Sponsored AD(21 days)",
+          "Interactions with Clients",
         ],
       },
     ],
@@ -233,18 +200,6 @@ const serviceContent = {
     subtitle: "Search engine optimization that drives long-term organic growth",
     description:
       "Technical, content and local SEO programs that help your site rank for high-value keywords.",
-    features: [
-      "Keyword research and competitor analysis",
-      "Site architecture and technical fixes",
-      "Content optimization",
-      "Local search (Google Business Profile)",
-      "Link building and authority signals",
-    ],
-    benefits: [
-      "Improved organic rankings",
-      "Sustainable traffic growth",
-      "Higher marketing ROI",
-    ],
     packages: [
       {
         name: "Foundational",
@@ -316,37 +271,6 @@ const ServiceDetail = () => {
           </div>
         </div>
 
-        <div className="row justify-content-center mb-5">
-          <div className="col-md-5">
-            <h4>What this service includes</h4>
-            <ul className="list-unstyled" style={{ lineHeight: "1.8" }}>
-              {service.features.map((feature) => (
-                <li key={feature} style={{ marginBottom: "8px" }}>
-                  <i
-                    className="fa fa-check"
-                    style={{ color: "#0a1a3b", marginRight: "8px" }}
-                  />{" "}
-                  {feature}
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div className="col-md-5">
-            <h4>Why clients choose us</h4>
-            <ul className="list-unstyled" style={{ lineHeight: "1.8" }}>
-              {service.benefits.map((benefit) => (
-                <li key={benefit} style={{ marginBottom: "8px" }}>
-                  <i
-                    className="fa fa-thumbs-up"
-                    style={{ color: "#0a1a3b", marginRight: "8px" }}
-                  />{" "}
-                  {benefit}
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-
         <div
           style={{
             background: "linear-gradient(135deg, #0a1a3b 0%, #1a2a4b 100%)",
@@ -363,9 +287,6 @@ const ServiceDetail = () => {
               >
                 Choose your plan
               </h2>
-              <p style={{ color: "#b0c4e3", fontSize: "16px" }}>
-                Unlock endless possibilities
-              </p>
             </div>
           </div>
 
@@ -378,51 +299,33 @@ const ServiceDetail = () => {
                   key={pkg.name}
                   style={{ position: "relative" }}
                 >
-                  {isPopular && (
-                    <div
-                      style={{
-                        position: "absolute",
-                        top: "-8px",
-                        left: "50%",
-                        transform: "translateX(-50%)",
-                        background:
-                          "linear-gradient(135deg, #a855f7 0%, #ec4899 100%)",
-                        color: "#fff",
-                        padding: "4px 12px",
-                        borderRadius: "20px",
-                        fontSize: "12px",
-                        fontWeight: 600,
-                        textTransform: "uppercase",
-                        letterSpacing: "0.5px",
-                      }}
-                    >
-                      Popular
-                    </div>
-                  )}
                   <div
                     style={{
+                      display: "flex",
+                      flexDirection: "column",
+                      justifyContent: "space-between",
                       background: isPopular
-                        ? "linear-gradient(135deg, rgba(168, 85, 247, 0.2) 0%, rgba(236, 72, 153, 0.2) 100%)"
+                        ? "linear-gradient(135deg, rgba(59, 130, 246, 0.2) 0%, rgba(6, 182, 212, 0.2) 100%)"
                         : "rgba(255, 255, 255, 0.05)",
                       border: isPopular
-                        ? "1px solid rgba(168, 85, 247, 0.5)"
+                        ? "1px solid rgba(59, 130, 246, 0.5)"
                         : "1px solid rgba(255, 255, 255, 0.1)",
                       borderRadius: "16px",
                       padding: "30px",
-                      height: "100%",
+                      height: "85%",
                       backdropFilter: "blur(10px)",
                       transition: "all 0.3s ease",
                     }}
                     onMouseEnter={(e) => {
                       e.currentTarget.style.transform = "translateY(-8px)";
                       e.currentTarget.style.borderColor = isPopular
-                        ? "rgba(168, 85, 247, 0.8)"
+                        ? "rgba(59, 130, 246, 0.8)"
                         : "rgba(255, 255, 255, 0.2)";
                     }}
                     onMouseLeave={(e) => {
                       e.currentTarget.style.transform = "translateY(0)";
                       e.currentTarget.style.borderColor = isPopular
-                        ? "rgba(168, 85, 247, 0.5)"
+                        ? "rgba(59, 130, 246, 0.5)"
                         : "rgba(255, 255, 255, 0.1)";
                     }}
                   >
@@ -439,7 +342,7 @@ const ServiceDetail = () => {
                       style={{
                         fontSize: "36px",
                         fontWeight: 700,
-                        color: isPopular ? "#ec4899" : "#fff",
+                        color: isPopular ? "#3b82f6" : "#fff",
                         margin: "12px 0",
                       }}
                     >
@@ -481,7 +384,7 @@ const ServiceDetail = () => {
                           <i
                             className="fa fa-check"
                             style={{
-                              color: isPopular ? "#ec4899" : "#10b981",
+                              color: isPopular ? "#3b82f6" : "#10b981",
                               marginRight: "10px",
                               fontSize: "14px",
                             }}
@@ -496,18 +399,18 @@ const ServiceDetail = () => {
                       style={{
                         display: "block",
                         background: isPopular
-                          ? "linear-gradient(135deg, #a855f7 0%, #ec4899 100%)"
+                          ? "linear-gradient(135deg, #3b82f6 0%, #06b6d4 100%)"
                           : "#0a1a3b",
                         color: "#fff",
                         border: isPopular
                           ? "none"
                           : "1px solid rgba(255, 255, 255, 0.2)",
-                        padding: "12px 20px",
+                        padding: "14px 20px",
                         borderRadius: "8px",
                         textAlign: "center",
                         textDecoration: "none",
                         fontWeight: 600,
-                        fontSize: "14px",
+                        fontSize: "16px",
                         transition: "all 0.3s ease",
                       }}
                       onMouseEnter={(e) => {
