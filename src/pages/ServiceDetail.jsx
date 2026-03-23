@@ -134,18 +134,18 @@ const serviceContent = {
     subtitle: "Visual brand experiences that make you unforgettable",
     description:
       "Logo, brand identity, and marketing collateral that resonate and convert.",
-    features: [
-      "Logo and brand guideline creation",
-      "Print and digital marketing templates",
-      "Social media design kits",
-      "Illustration and iconography",
-      "Adaptations for all formats",
-    ],
-    benefits: [
-      "Cohesive identity across channels",
-      "Faster creative production",
-      "Improved brand recognition",
-    ],
+    // features: [
+    //   "Logo and brand guideline creation",
+    //   "Print and digital marketing templates",
+    //   "Social media design kits",
+    //   "Illustration and iconography",
+    //   "Adaptations for all formats",
+    // ],
+    // benefits: [
+    //   "Cohesive identity across channels",
+    //   "Faster creative production",
+    //   "Improved brand recognition",
+    // ],
     packages: [
       {
         name: "Basic Bundle",
