@@ -297,7 +297,7 @@ const ServiceDetail = () => {
                 <div
                   className="col-md-12 col-lg-4 mb-4"
                   key={pkg.name}
-                  style={{ position: "relative" }}
+                  style={{ position: "relative", padding: "10px" }}
                 >
                   <div
                     style={{
