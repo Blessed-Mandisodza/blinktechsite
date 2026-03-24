@@ -455,11 +455,9 @@ const ServiceDetail = () => {
                 padding: "10px 30px",
                 borderRadius: "8px",
                 borderWidth: "2px",
-                color: "linear-gradient(135deg, #3b82f6 0%, #06b6d4 100%)",
-                borderColor:
-                  "linear-gradient(135deg, #3b82f6 0%, #06b6d4 100%)",
+                borderColor: "#3b82f6",
                 fontWeight: 600,
-                fontSize: "14px",
+                fontSize: "16px",
                 transition: "all 0.3s ease",
               }}
             >
