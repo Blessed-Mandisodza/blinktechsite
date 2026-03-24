@@ -447,7 +447,7 @@ const ServiceDetail = () => {
         </div>
 
         <div className="row" style={{ marginTop: "40px" }}>
-          <div className="col-md-12 text-center" style={{ fontSize: "100px" }}>
+          <div className="col-md-12 text-center" style={{ fontSize: "20px" }}>
             <Link to="/services" className="btn btn-outline-secondary">
               Back to All Services
             </Link>
