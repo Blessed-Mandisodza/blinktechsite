@@ -312,7 +312,7 @@ const ServiceDetail = () => {
                         : "1px solid rgba(255, 255, 255, 0.1)",
                       borderRadius: "16px",
                       padding: "30px",
-                      height: "85%",
+                      height: "100%",
                       backdropFilter: "blur(10px)",
                       transition: "all 0.3s ease",
                     }}
