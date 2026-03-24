@@ -448,7 +448,21 @@ const ServiceDetail = () => {
 
         <div className="row" style={{ marginTop: "40px" }}>
           <div className="col-md-12 text-center" style={{ fontSize: "20px" }}>
-            <Link to="/services" className="btn btn-outline-secondary">
+            <Link
+              to="/services"
+              className="btn btn-outline-secondary"
+              style={{
+                padding: "10px 30px",
+                borderRadius: "8px",
+                borderWidth: "2px",
+                color: "linear-gradient(135deg, #3b82f6 0%, #06b6d4 100%)",
+                borderColor:
+                  "linear-gradient(135deg, #3b82f6 0%, #06b6d4 100%)",
+                fontWeight: 600,
+                fontSize: "14px",
+                transition: "all 0.3s ease",
+              }}
+            >
               Back to All Services
             </Link>
           </div>

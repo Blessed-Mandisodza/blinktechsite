@@ -42,7 +42,7 @@ export const Services = (props) => {
       icon: "fa fa-bullhorn",
       name: "SEO",
       text: "Strategic campaigns that boost your online presence, engage your target audience, and drive conversions.",
-      link: "/services/seo",
+      // link: "/services/seo",
     },
   ];
 
