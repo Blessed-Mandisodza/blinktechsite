@@ -8,6 +8,7 @@ const Home = () => {
   const [landingPageData, setLandingPageData] = useState({});
 
   useEffect(() => {
+    window.scrollTo(0, 0);
     setLandingPageData(JsonData);
 
     // Initialize scroll animations

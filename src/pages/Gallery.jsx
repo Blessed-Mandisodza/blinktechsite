@@ -4,10 +4,11 @@ import JsonData from "../data/data.json";
 
 const GalleryPage = () => {
   const [landingPageData, setLandingPageData] = useState({});
-  
+
   useEffect(() => {
+    window.scrollTo(0, 0);
     setLandingPageData(JsonData);
-    
+
     // Initialize scroll animations
     const observer = new IntersectionObserver(
       (entries) => {
@@ -20,7 +21,7 @@ const GalleryPage = () => {
       {
         threshold: 0.1,
         rootMargin: "0px 0px -50px 0px",
-      }
+      },
     );
 
     const fadeElements = document.querySelectorAll(".fade-in");
@@ -39,4 +40,3 @@ const GalleryPage = () => {
 };
 
 export default GalleryPage;
-

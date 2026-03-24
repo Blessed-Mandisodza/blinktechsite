@@ -4,8 +4,9 @@ import JsonData from "../data/data.json";
 
 const ContactPage = () => {
   const [landingPageData, setLandingPageData] = useState({});
-  
+
   useEffect(() => {
+    window.scrollTo(0, 0);
     setLandingPageData(JsonData);
   }, []);
 
@@ -17,4 +18,3 @@ const ContactPage = () => {
 };
 
 export default ContactPage;
-

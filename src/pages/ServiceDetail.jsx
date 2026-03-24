@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 
 const serviceContent = {
@@ -228,6 +228,10 @@ const ServiceDetail = () => {
   const { serviceId } = useParams();
   const service = serviceContent[serviceId];
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [serviceId]);
+
   if (!service) {
     return (
       <div
@@ -443,7 +447,7 @@ const ServiceDetail = () => {
         </div>
 
         <div className="row" style={{ marginTop: "40px" }}>
-          <div className="col-md-12 text-center">
+          <div className="col-md-12 text-center" style={{ fontSize: "100px" }}>
             <Link to="/services" className="btn btn-outline-secondary">
               Back to All Services
             </Link>
