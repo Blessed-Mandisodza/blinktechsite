@@ -33,7 +33,18 @@ const AboutPage = () => {
   }, []);
 
   return (
-    <div style={{ paddingTop: "100px" }}>
+    <div>
+      {/* Hero Section */}
+      <div id="about-hero">
+        <div className="hero-content">
+          <h1>About Our Company</h1>
+          <p>
+            Learn more about our mission, values, and what drives us forward
+          </p>
+        </div>
+      </div>
+
+      {/* Main About Section */}
       <About data={landingPageData.About} />
     </div>
   );
