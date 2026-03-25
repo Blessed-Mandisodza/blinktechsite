@@ -1385,6 +1385,36 @@ html {
     margin-bottom: 0;
   }
 
+  .mv-card {
+    padding: 30px 20px;
+    margin-bottom: 20px;
+  }
+
+  .mv-icon {
+    width: 70px;
+    height: 70px;
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+
+  .mv-card h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+  }
+
+  .mv-card p {
+    font-size: 15px;
+  }
+
+  .values-list li {
+    font-size: 14px;
+    padding-left: 22px;
+  }
+
+  .values-list li:before {
+    top: 6px;
+  }
+
   #services .service-desc {
     padding: 30px 20px;
   }
