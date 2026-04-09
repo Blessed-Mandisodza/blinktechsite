@@ -10,11 +10,13 @@ const resetScrollPosition = () => {
     activeElement.blur();
   }
 
+  document.documentElement.scrollTop = 0;
+  document.body.scrollTop = 0;
   window.scrollTo({ top: 0, left: 0, behavior: "auto" });
 };
 
 const ScrollToTop = () => {
-  const { pathname } = useLocation();
+  const { pathname, search, hash, key } = useLocation();
 
   useEffect(() => {
     if (!("scrollRestoration" in window.history)) {
@@ -35,11 +37,19 @@ const ScrollToTop = () => {
     const frameId = window.requestAnimationFrame(() => {
       resetScrollPosition();
     });
+    const timeoutIds = [50, 150].map((delay) =>
+      window.setTimeout(() => {
+        resetScrollPosition();
+      }, delay),
+    );
 
     return () => {
       window.cancelAnimationFrame(frameId);
+      timeoutIds.forEach((timeoutId) => {
+        window.clearTimeout(timeoutId);
+      });
     };
-  }, [pathname]);
+  }, [pathname, search, hash, key]);
 
   return null;
 };

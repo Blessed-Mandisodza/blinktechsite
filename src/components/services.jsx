@@ -42,7 +42,7 @@ export const Services = (props) => {
       icon: "fa fa-bullhorn",
       name: "SEO",
       text: "Strategic campaigns that boost your online presence, engage your target audience, and drive conversions.",
-      // link: "/services/seo",
+      link: "/services/seo",
     },
   ];
 
@@ -483,8 +483,11 @@ export const Services = (props) => {
               whileHover="hover"
               whileTap="tap"
             >
-              <Link to="/contact" className="btn btn-custom btn-lg">
-                Learn More
+              <Link
+                to={isHomePage ? "/services" : "/contact"}
+                className="btn btn-custom btn-lg"
+              >
+                {isHomePage ? "Learn More" : "Request a Quote"}
               </Link>
             </motion.div>
           </motion.div>
