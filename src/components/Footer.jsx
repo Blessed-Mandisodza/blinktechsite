@@ -1,9 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import JsonData from "../data/data.json";
 
 export const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const contact = JsonData.Contact;
+  const phoneHref = contact.phone
+    ? `tel:${contact.phone.replace(/\s+/g, "")}`
+    : null;
+  const emailHref = contact.email ? `mailto:${contact.email}` : null;
 
   // Footer sections data
   const footerSections = [
@@ -26,12 +32,12 @@ export const Footer = () => {
       ],
     },
     {
-      title: "Support",
+      title: "Resources",
       links: [
         { name: "FAQ", path: "/faq" },
-        { name: "Privacy Policy", path: "/privacy" },
-        { name: "Terms of Service", path: "/terms" },
-        { name: "Support", path: "/support" },
+        { name: "About Us", path: "/about" },
+        { name: "Contact", path: "/contact" },
+        { name: "Request a Quote", path: "/contact" },
       ],
     },
   ];
@@ -40,14 +46,14 @@ export const Footer = () => {
   const socialLinks = [
     {
       icon: "fa fa-facebook",
-      url: "https://www.facebook.com/profile.php?id=61584424251054",
+      url: contact.facebook,
       label: "Facebook",
     },
     // { icon: "fa fa-twitter", url: "https://twitter.com", label: "Twitter" },
     // { icon: "fa fa-linkedin", url: "https://linkedin.com", label: "LinkedIn" },
     {
       icon: "fa fa-instagram",
-      url: "https://www.instagram.com/blinktech_creatives?igsh=bzA0NHFpcGc5NnJi&utm_source=qr",
+      url: contact.instagram,
       label: "Instagram",
     },
   ];
@@ -90,23 +96,24 @@ export const Footer = () => {
         <div className="row">
           {/* Company Info */}
           <motion.div variants={itemVariants} className="col-md-3 col-sm-6">
-            <h5>Blinkstar Creatives</h5>
+            <h5>BlinkTech Creatives</h5>
             <p className="company-description">
-              We create stunning digital experiences that help businesses grow
-              and succeed in the modern world.
+              We build digital experiences that help businesses look credible,
+              reach more people, and grow with confidence.
             </p>
             <div className="contact-info">
-              <p>
-                <i className="fa fa-map-marker" aria-hidden="true"></i> N/A
-              </p>
-              <p>
-                <i className="fa fa-phone" aria-hidden="true"></i> +263 78 293
-                1905
-              </p>
-              <p>
-                <i className="fa fa-envelope" aria-hidden="true"></i>{" "}
-                blinktechcreatives@gmail.com
-              </p>
+              {phoneHref && (
+                <p>
+                  <i className="fa fa-phone" aria-hidden="true"></i>
+                  <a href={phoneHref}>{contact.phone}</a>
+                </p>
+              )}
+              {emailHref && (
+                <p>
+                  <i className="fa fa-envelope" aria-hidden="true"></i>
+                  <a href={emailHref}>{contact.email}</a>
+                </p>
+              )}
             </div>
           </motion.div>
 
@@ -139,7 +146,7 @@ export const Footer = () => {
         <motion.div variants={itemVariants} className="row footer-bottom">
           <div className="col-md-6">
             <p className="copyright">
-              &copy; {currentYear} Blinkstar Creatives. All rights reserved.
+              &copy; {currentYear} BlinkTech Creatives. All rights reserved.
             </p>
           </div>
           <div className="col-md-6">

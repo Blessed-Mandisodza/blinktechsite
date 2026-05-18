@@ -7,13 +7,13 @@ export const CTA = () => {
       <div className="container">
         <div className="row">
           <div className="col-md-8 col-md-offset-2">
-            <h2>Ready to Transform Your Digital Presence?</h2>
+            <h2>Ready to build something your customers trust?</h2>
             <p>
-              Let's work together to bring your vision to life. Get in touch with us today 
-              and discover how we can help you achieve your goals.
+              Whether you need a new website, stronger branding, or dependable
+              hosting, BlinkTech Creatives can help you launch with confidence.
             </p>
             <Link to="/contact" className="btn btn-custom btn-lg">
-              Get Started Today
+              Request a Quote
             </Link>
           </div>
         </div>

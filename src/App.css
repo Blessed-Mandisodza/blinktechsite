@@ -139,6 +139,10 @@ html {
 
 .faq-question {
   padding: 25px 30px;
+  width: 100%;
+  background: transparent;
+  border: 0;
+  text-align: left;
   cursor: pointer;
   display: flex;
   justify-content: space-between;
@@ -148,6 +152,11 @@ html {
 
 .faq-question:hover {
   background: rgba(92, 169, 251, 0.06);
+}
+
+.faq-question:focus-visible {
+  outline: 2px solid rgba(92, 169, 251, 0.6);
+  outline-offset: -2px;
 }
 
 .faq-question h4 {
@@ -225,6 +234,218 @@ html {
 .fade-in.visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* Homepage Spotlight */
+.home-spotlight {
+  padding: 90px 0;
+  background: linear-gradient(
+    180deg,
+    rgba(10, 26, 59, 0.98) 0%,
+    rgba(10, 26, 59, 0.75) 100%
+  );
+  position: relative;
+  overflow: hidden;
+}
+
+.home-spotlight::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(
+      circle at 15% 20%,
+      rgba(92, 169, 251, 0.12) 0%,
+      transparent 32%
+    ),
+    radial-gradient(
+      circle at 85% 10%,
+      rgba(99, 114, 255, 0.1) 0%,
+      transparent 28%
+    );
+  pointer-events: none;
+}
+
+.home-spotlight .container {
+  position: relative;
+  z-index: 1;
+}
+
+.home-spotlight-card {
+  height: 100%;
+  padding: 34px 28px;
+  border-radius: 22px;
+  background: rgba(0, 31, 63, 0.45);
+  border: 1px solid rgba(92, 169, 251, 0.18);
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(12px);
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.home-spotlight-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(92, 169, 251, 0.35);
+  box-shadow: 0 24px 50px rgba(92, 169, 251, 0.12);
+}
+
+.home-spotlight-card i.fa {
+  width: 72px;
+  height: 72px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 18px;
+  margin-bottom: 20px;
+  font-size: 28px;
+  color: #fff;
+  background: linear-gradient(
+    135deg,
+    rgba(92, 169, 251, 0.28),
+    rgba(99, 114, 255, 0.28)
+  );
+  border: 1px solid rgba(92, 169, 251, 0.3);
+}
+
+.home-spotlight-card h3 {
+  color: #fff;
+  font-size: 24px;
+  margin-bottom: 14px;
+}
+
+.home-spotlight-card p {
+  color: rgba(224, 224, 224, 0.82);
+  line-height: 1.8;
+  margin-bottom: 0;
+}
+
+.home-contact-strip {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 32px;
+  padding: 20px 24px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(92, 169, 251, 0.14);
+}
+
+.home-contact-label {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+}
+
+.home-contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.home-contact-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 18px;
+  border-radius: 999px;
+  background: rgba(92, 169, 251, 0.12);
+  color: #fff;
+  text-decoration: none;
+  transition:
+    background 0.3s ease,
+    transform 0.3s ease;
+}
+
+.home-contact-link:hover {
+  background: rgba(92, 169, 251, 0.2);
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.home-contact-link i.fa {
+  color: #5ca9fb;
+}
+
+.whatsapp-home-button {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 1100;
+  width: 64px;
+  height: 64px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: linear-gradient(
+    135deg,
+    rgba(10, 26, 59, 0.96) 0%,
+    rgba(22, 53, 108, 0.94) 55%,
+    rgba(92, 169, 251, 0.92) 100%
+  );
+  color: #fff;
+  text-decoration: none;
+  border: 1px solid rgba(92, 169, 251, 0.45);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  overflow: hidden;
+}
+
+.whatsapp-home-button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0) 20%,
+    rgba(255, 255, 255, 0.18) 50%,
+    rgba(255, 255, 255, 0) 80%
+  );
+  transform: translateX(-120%);
+  transition: transform 0.6s ease;
+}
+
+.whatsapp-home-button::after {
+  content: "";
+  position: absolute;
+  inset: 6px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  pointer-events: none;
+}
+
+.whatsapp-home-button:hover {
+  color: #fff;
+}
+
+.whatsapp-home-button:hover::before {
+  transform: translateX(120%);
+}
+
+.whatsapp-home-icon,
+.whatsapp-home-text {
+  position: relative;
+  z-index: 1;
+}
+
+.whatsapp-home-icon {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.whatsapp-home-icon i.fa {
+  font-size: 31px;
+  text-shadow: 0 4px 10px rgba(0, 0, 0, 0.28);
 }
 
 /* Glass Navigation Bar - Enhanced */
@@ -359,9 +580,32 @@ html {
   border-radius: 50%;
 }
 
-#features .col-xs-6,
-#features .col-md-3 {
+#features .feature-column {
+  display: flex;
   margin-bottom: 40px;
+}
+
+#features .feature-card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: 320px;
+  padding: 34px 26px;
+  border-radius: 24px;
+  background: rgba(0, 31, 63, 0.28);
+  border: 1px solid rgba(92, 169, 251, 0.16);
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.18);
+  backdrop-filter: blur(10px);
+  transition:
+    transform 0.3s ease,
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+#features .feature-card:hover {
+  transform: translateY(-4px);
+  border-color: rgba(92, 169, 251, 0.32);
+  box-shadow: 0 18px 42px rgba(92, 169, 251, 0.12);
 }
 
 #features i.fa {
@@ -384,8 +628,7 @@ html {
   margin: 0 auto 25px;
 }
 
-#features .col-xs-6:hover i.fa,
-#features .col-md-3:hover i.fa {
+#features .feature-card:hover i.fa {
   transform: translateY(-8px) scale(1.05);
   background: linear-gradient(
     135deg,
@@ -1106,6 +1349,15 @@ html {
   margin-bottom: 15px;
 }
 
+.contact-item a {
+  color: rgba(224, 224, 224, 0.9);
+  text-decoration: none;
+}
+
+.contact-item a:hover {
+  color: #5ca9fb;
+}
+
 .contact-item span {
   color: #5ca9fb;
   display: block;
@@ -1151,6 +1403,15 @@ html {
 #footer .contact-info p {
   margin-bottom: 10px;
   font-size: 13px;
+}
+
+#footer .contact-info a {
+  color: inherit;
+  text-decoration: none;
+}
+
+#footer .contact-info a:hover {
+  color: #5ca9fb;
 }
 
 #footer .contact-info i {
@@ -1387,6 +1648,33 @@ html {
     font-size: 32px;
   }
 
+  .home-spotlight {
+    padding: 72px 0;
+  }
+
+  .home-spotlight-card {
+    margin-bottom: 20px;
+  }
+
+  .home-contact-strip {
+    padding: 18px;
+  }
+
+  .home-contact-links {
+    width: 100%;
+  }
+
+  .whatsapp-home-button {
+    right: 18px;
+    bottom: 18px;
+    width: 60px;
+    height: 60px;
+  }
+
+  .whatsapp-home-icon i.fa {
+    font-size: 28px;
+  }
+
   .services-hero {
     padding: 118px 0 88px !important;
     margin-bottom: 32px !important;
@@ -1474,6 +1762,33 @@ html {
     max-width: 320px;
   }
 
+  #features .feature-column {
+    float: none;
+    margin-bottom: 24px;
+  }
+
+  #features .row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  #features .feature-card {
+    margin: 0;
+    min-height: 100%;
+    padding: 30px 24px;
+  }
+
+  #features i.fa {
+    width: 88px;
+    height: 88px;
+    font-size: 38px;
+    margin-bottom: 20px;
+  }
+
+  #features h3 {
+    font-size: 21px;
+  }
+
   .service-detail-page {
     padding-top: 96px !important;
     padding-bottom: 56px !important;
@@ -1528,6 +1843,26 @@ html {
 
   .section-title h2 {
     font-size: 28px;
+  }
+
+  .home-spotlight {
+    padding: 60px 0;
+  }
+
+  .home-spotlight-card {
+    padding: 28px 22px;
+  }
+
+  .home-contact-link {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .whatsapp-home-button {
+    right: 14px;
+    bottom: 14px;
+    width: 56px;
+    height: 56px;
   }
 
   .services-hero {
@@ -1604,6 +1939,27 @@ html {
 
   #services .service-desc {
     padding: 25px 20px;
+  }
+
+  #features .feature-card {
+    min-height: 100%;
+    padding: 26px 20px;
+    border-radius: 20px;
+  }
+
+  #features i.fa {
+    width: 78px;
+    height: 78px;
+    font-size: 32px;
+  }
+
+  #features h3 {
+    font-size: 19px;
+    line-height: 1.35;
+  }
+
+  #features p {
+    font-size: 14px;
   }
 
   #services .service-desc h3 {

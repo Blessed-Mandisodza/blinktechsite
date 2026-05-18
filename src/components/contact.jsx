@@ -9,11 +9,20 @@ const initialState = {
   message: "",
 };
 
+const emailServiceId = process.env.REACT_APP_EMAILJS_SERVICE_ID;
+const emailTemplateId = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
+const emailPublicKey = process.env.REACT_APP_EMAILJS_PUBLIC_KEY;
+
 export const Contact = (props) => {
   const [{ name, email, message }, setState] = useState(initialState);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null);
   const formRef = useRef();
+  const contactData = props.data || {};
+  const phoneHref = contactData.phone
+    ? `tel:${contactData.phone.replace(/\s+/g, "")}`
+    : null;
+  const emailHref = contactData.email ? `mailto:${contactData.email}` : null;
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -24,28 +33,30 @@ export const Contact = (props) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    if (!emailServiceId || !emailTemplateId || !emailPublicKey) {
+      console.error("EmailJS is not configured. Check your environment variables.");
+      setSubmitStatus("config-error");
+      return;
+    }
+
     setIsSubmitting(true);
     setSubmitStatus(null);
 
-    console.log("Submitting form with:", { name, email, message });
-
-    // Replace these with your actual EmailJS credentials
     emailjs
       .sendForm(
-        "service_ejli1t6", // Replace with your Service ID
-        "template_mms18bk", // Replace with your Template ID
+        emailServiceId,
+        emailTemplateId,
         formRef.current,
-        "1Q0sA5GMPcxYBDmXf", // Replace with your Public Key
+        emailPublicKey,
       )
       .then(
-        (result) => {
-          console.log("Email sent successfully:", result.text);
+        () => {
           setSubmitStatus("success");
           clearState();
           setTimeout(() => setSubmitStatus(null), 5000);
         },
-        (error) => {
-          console.log("Email error:", error.text);
+        () => {
           setSubmitStatus("error");
           setTimeout(() => setSubmitStatus(null), 5000);
         },
@@ -55,7 +66,6 @@ export const Contact = (props) => {
       });
   };
 
-  // Animation Variants
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -200,7 +210,6 @@ export const Contact = (props) => {
                 </p>
               </motion.div>
 
-              {/* Status Message */}
               {submitStatus && (
                 <motion.div
                   className={`alert ${submitStatus === "success" ? "alert-success" : "alert-danger"}`}
@@ -216,8 +225,10 @@ export const Contact = (props) => {
                   }}
                 >
                   {submitStatus === "success"
-                    ? "✓ Message sent successfully! We'll get back to you soon."
-                    : "✗ Oops! Something went wrong. Please try again."}
+                    ? "Message sent successfully! We'll get back to you soon."
+                    : submitStatus === "config-error"
+                      ? "The contact form is not configured yet. Please add the EmailJS environment variables."
+                      : "Oops! Something went wrong. Please try again."}
                 </motion.div>
               )}
 
@@ -322,16 +333,18 @@ export const Contact = (props) => {
           >
             <div className="contact-item">
               <h3>Contact Info</h3>
-              <motion.p
-                initial={{ opacity: 0, x: 20 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ delay: 0.5 }}
-              >
-                <span>
-                  <i className="fa fa-map-marker"></i> Address
-                </span>
-                {props.data ? props.data.address : "loading"}
-              </motion.p>
+              {contactData.address && (
+                <motion.p
+                  initial={{ opacity: 0, x: 20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  transition={{ delay: 0.5 }}
+                >
+                  <span>
+                    <i className="fa fa-map-marker"></i> Address
+                  </span>
+                  {contactData.address}
+                </motion.p>
+              )}
             </div>
 
             <div className="contact-item">
@@ -342,8 +355,12 @@ export const Contact = (props) => {
               >
                 <span>
                   <i className="fa fa-phone"></i> Phone
-                </span>{" "}
-                {props.data ? props.data.phone : "loading"}
+                </span>
+                {phoneHref ? (
+                  <a href={phoneHref}>{contactData.phone}</a>
+                ) : (
+                  "loading"
+                )}
               </motion.p>
             </div>
 
@@ -355,8 +372,12 @@ export const Contact = (props) => {
               >
                 <span>
                   <i className="fa fa-envelope-o"></i> Email
-                </span>{" "}
-                {props.data ? props.data.email : "loading"}
+                </span>
+                {emailHref ? (
+                  <a href={emailHref}>{contactData.email}</a>
+                ) : (
+                  "loading"
+                )}
               </motion.p>
             </div>
           </motion.div>
@@ -370,7 +391,7 @@ export const Contact = (props) => {
                     whileTap={{ scale: 0.95 }}
                   >
                     <a
-                      href={props.data ? props.data.facebook : "/"}
+                      href={contactData.facebook || "/"}
                       target="_blank"
                       rel="noopener noreferrer"
                     >
@@ -383,7 +404,7 @@ export const Contact = (props) => {
                     transition={{ delay: 0.1 }}
                   >
                     <a
-                      href={props.data ? props.data.instagram : "/"}
+                      href={contactData.instagram || "/"}
                       target="_blank"
                       rel="noopener noreferrer"
                     >

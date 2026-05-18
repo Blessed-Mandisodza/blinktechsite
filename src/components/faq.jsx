@@ -19,17 +19,20 @@ export const FAQ = (props) => {
             {props.data
               ? props.data.map((d, i) => (
                   <div key={`faq-${i}`} className="faq-item fade-in">
-                    <div
+                    <button
+                      type="button"
                       className={`faq-question ${activeIndex === i ? "active" : ""}`}
                       onClick={() => toggleFAQ(i)}
+                      aria-expanded={activeIndex === i}
+                      aria-controls={`faq-panel-${i}`}
                     >
                       <h4>{d.question}</h4>
-                      <span className="faq-icon">
-                        {activeIndex === i ? "−" : "+"}
+                      <span className="faq-icon" aria-hidden="true">
+                        {activeIndex === i ? "-" : "+"}
                       </span>
-                    </div>
+                    </button>
                     {activeIndex === i && (
-                      <div className="faq-answer">
+                      <div className="faq-answer" id={`faq-panel-${i}`}>
                         <p>{d.answer}</p>
                       </div>
                     )}
@@ -42,4 +45,3 @@ export const FAQ = (props) => {
     </div>
   );
 };
-

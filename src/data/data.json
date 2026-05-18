@@ -1,12 +1,12 @@
 {
   "Header": {
-    "title": "Design • Develop • Dominate",
-    "paragraph": "Unlock your brand’s potential with stunning graphics and innovative web solutions. Join us to create a lasting impact and achieve your business goals"
+    "title": "Design. Develop. Grow.",
+    "paragraph": "BlinkTech Creatives builds websites, branding, hosting, and digital growth systems that help your business look credible and convert more customers."
   },
   "About": {
-    "paragraph": "Founded in 2019, Blinkstar Designs began its journey as a creative powerhouse specializing in graphic design. Our passion for visual storytelling and innovation quickly garnered attention, allowing us to build a strong foundation in the design community.In 2024, we expanded our horizons by introducing web development and software engineering services. This evolution reflects our commitment to providing comprehensive solutions that cater to the diverse needs of our clients.",
-    "Why": ["Experience", "Creative Solutions"],
-    "Why2": ["Innovative Technology", "Proven Track Record"]
+    "paragraph": "Founded in 2019, BlinkTech Creatives started as a graphic design studio focused on clear visual communication. As our clients grew, we expanded into web development, hosting, business email, and digital support so they could rely on one practical partner for their online presence.",
+    "Why": ["Business-focused design", "Clear communication"],
+    "Why2": ["Reliable delivery", "Ongoing support"]
   },
   "Gallery": [
     {
@@ -90,7 +90,7 @@
   "Testimonials": [
     {
       "img": "img/testimonials/01.jpg",
-      "text": "\"Blinkstar Designs transformed our brand identity completely. Their creative approach and attention to detail exceeded our expectations. Highly recommended!\"",
+      "text": "\"BlinkTech Creatives transformed our brand identity completely. Their creative approach and attention to detail exceeded our expectations. Highly recommended!\"",
       "name": "Sarah Johnson",
       "company": "Tech Startup CEO"
     },
@@ -102,7 +102,7 @@
     },
     {
       "img": "img/testimonials/03.jpg",
-      "text": "\"Working with Blinkstar Designs was a pleasure. They understood our vision and brought it to life with exceptional design and development skills.\"",
+      "text": "\"Working with BlinkTech Creatives was a pleasure. They understood our vision and brought it to life with exceptional design and development skills.\"",
       "name": "Emily Rodriguez",
       "company": "Marketing Manager"
     },
@@ -120,7 +120,7 @@
     },
     {
       "img": "img/testimonials/06.jpg",
-      "text": "\"From concept to completion, Blinkstar Designs delivered exceptional results. Their team is responsive, creative, and truly professional.\"",
+      "text": "\"From concept to completion, BlinkTech Creatives delivered exceptional results. Their team is responsive, creative, and truly professional.\"",
       "name": "Robert Williams",
       "company": "Entrepreneur"
     }
@@ -148,19 +148,19 @@
     }
   ],
   "Contact": {
-    "phone": "+263 78 293 1905",
-    "email": "blinktechcreatives@gmail.com",
+    "phone": "+263 71 738 5587",
+    "email": "info@blinktechcreatives.co.zw",
     "facebook": "https://www.facebook.com/profile.php?id=61584424251054",
     "instagram": "https://www.instagram.com/blinktech_creatives?igsh=bzA0NHFpcGc5NnJi&utm_source=qr"
   },
   "FAQ": [
     {
       "question": "How long does a typical project take?",
-      "answer": "Project timelines vary depending on scope and complexity. A simple website typically takes 2-4 weeks, while comprehensive branding projects may take 6-8 weeks. We'll provide a detailed timeline during our initial consultation."
+      "answer": "Project timelines vary depending on scope and complexity. A simple website typically takes 3-5 days."
     },
     {
       "question": "Do you provide ongoing support after project completion?",
-      "answer": "Yes! We offer maintenance packages and ongoing support to ensure your website or application continues to perform optimally. We can discuss support options that fit your needs."
+      "answer": "Yes. We offer maintenance packages and ongoing support to ensure your website or application continues to perform optimally. We can discuss support options that fit your needs."
     },
     {
       "question": "What is your pricing structure?",
@@ -168,22 +168,22 @@
     },
     {
       "question": "Can you work with our existing brand guidelines?",
-      "answer": "Absolutely! We can work within your existing brand guidelines or help you develop new ones. Our team is flexible and adapts to your brand's unique requirements."
+      "answer": "Absolutely. We can work within your existing brand guidelines or help you develop new ones. Our team adapts to your brand's unique requirements."
     },
     {
       "question": "Do you handle website hosting and domain setup?",
       "answer": "Yes, we can assist with hosting setup and domain configuration. We work with reliable hosting providers and can recommend the best options for your specific needs."
     },
     {
-      "question": "What makes Blinkstar Designs different from other agencies?",
-      "answer": "We combine creative design expertise with technical development skills, offering a comprehensive solution under one roof. Our client-centric approach ensures personalized service and results that exceed expectations."
+      "question": "What makes BlinkTech Creatives different from other agencies?",
+      "answer": "We combine creative design, technical implementation, hosting, and ongoing support so you can work with one partner instead of managing several disconnected providers."
     }
   ],
   "Features": [
     {
       "icon": "fa fa-rocket",
       "title": "Fast Delivery",
-      "text": "We understand the importance of deadlines. Our team works efficiently to deliver high-quality projects on time, every time."
+      "text": "We understand the importance of deadlines. Our team works efficiently to deliver high-quality projects on time."
     },
     {
       "icon": "fa fa-users",
