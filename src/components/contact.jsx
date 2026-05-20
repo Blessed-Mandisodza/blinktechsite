@@ -13,6 +13,15 @@ const emailServiceId = process.env.REACT_APP_EMAILJS_SERVICE_ID;
 const emailTemplateId = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
 const emailPublicKey = process.env.REACT_APP_EMAILJS_PUBLIC_KEY;
 
+const buildMailtoLink = ({ to, name, email, message }) => {
+  const subject = encodeURIComponent(`Website enquiry from ${name}`);
+  const body = encodeURIComponent(
+    `Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`,
+  );
+
+  return `mailto:${to}?subject=${subject}&body=${body}`;
+};
+
 export const Contact = (props) => {
   const [{ name, email, message }, setState] = useState(initialState);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -35,8 +44,23 @@ export const Contact = (props) => {
     e.preventDefault();
 
     if (!emailServiceId || !emailTemplateId || !emailPublicKey) {
-      console.error("EmailJS is not configured. Check your environment variables.");
-      setSubmitStatus("config-error");
+      if (!contactData.email) {
+        console.error("No destination email address is configured for the contact form.");
+        setSubmitStatus("config-error");
+        return;
+      }
+
+      const mailtoLink = buildMailtoLink({
+        to: contactData.email,
+        name,
+        email,
+        message,
+      });
+
+      window.location.href = mailtoLink;
+      setSubmitStatus("mailto-fallback");
+      clearState();
+      setTimeout(() => setSubmitStatus(null), 5000);
       return;
     }
 
@@ -212,7 +236,12 @@ export const Contact = (props) => {
 
               {submitStatus && (
                 <motion.div
-                  className={`alert ${submitStatus === "success" ? "alert-success" : "alert-danger"}`}
+                  className={`alert ${
+                    submitStatus === "success" ||
+                    submitStatus === "mailto-fallback"
+                      ? "alert-success"
+                      : "alert-danger"
+                  }`}
                   variants={statusVariants}
                   initial="hidden"
                   animate="visible"
@@ -226,8 +255,10 @@ export const Contact = (props) => {
                 >
                   {submitStatus === "success"
                     ? "Message sent successfully! We'll get back to you soon."
+                    : submitStatus === "mailto-fallback"
+                      ? "Your email app is opening with your message prefilled. Send it there to reach us."
                     : submitStatus === "config-error"
-                      ? "The contact form is not configured yet. Please add the EmailJS environment variables."
+                      ? "The contact form is missing email settings and no destination email address is available."
                       : "Oops! Something went wrong. Please try again."}
                 </motion.div>
               )}

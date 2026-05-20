@@ -58,27 +58,38 @@ const serviceContent = {
     packages: [
       {
         name: "Basic",
-        price: "$15/month",
-        details: ["10 GB SSD", "50 GB bandwidth", "1 site", "Standard support"],
+        price: "$30/year or $3/month",
+        details: [
+          "1 Website",
+          "5 Email Accounts",
+          "24/7 Support",
+          "1 Year Free Domain",
+          "Unlimited Bandwidth",
+          "5GB Storage",
+        ],
       },
       {
         name: "Business",
-        price: "$35/month",
+        price: "$60/year or $5/month",
         details: [
-          "30 GB SSD",
-          "200 GB bandwidth",
-          "5 sites",
-          "Priority support",
+          "5 Websites",
+          "20GB Storage",
+          "10 Email Accounts",
+          "Unlimited Bandwidth",
+          "24/7 Support",
+          "1 Year Free Domain",
         ],
       },
       {
         name: "Enterprise",
-        price: "$75/month",
+        price: "$80/year or $7/month",
         details: [
-          "100 GB SSD",
-          "Unlimited bandwidth",
-          "Unlimited sites",
-          "Dedicated support",
+          "10 Websites",
+          "35GB Storage",
+          "Unlimited Email Accounts",
+          "Unlimited Bandwidth",
+          "24/7 Support",
+          "1 Year Free Domain",
         ],
       },
     ],
@@ -91,25 +102,39 @@ const serviceContent = {
     packages: [
       {
         name: "Essential",
-        price: "$4/user/month",
-        details: ["10 GB inbox", "30-day archive", "Basic spam protection"],
+        price: "$20/year or $3/month",
+        details: [
+          "10 Email Accounts",
+          "5GB SSD Storage",
+          "Free Email SSL",
+          "Unlimited Traffic",
+          "Access on any device",
+          "Free Setup Support",
+          "1 Year Free Domain name",
+        ],
       },
       {
         name: "Pro",
-        price: "$8/user/month",
+        price: "$35/year or $5/month",
         details: [
-          "30 GB inbox",
-          "Advanced spam and virus protection",
-          "Shared calendars",
+          "25 Email Accounts",
+          "Free Email SSL",
+          "Free cPanel Account",
+          "Access on any device",
+          "Free Setup Support",
+          "1 Year Free Domain name",
         ],
       },
       {
         name: "Elite",
-        price: "$14/user/month",
+        price: "$45/year or $7/month",
         details: [
-          "Unlimited inbox",
-          "Priority SLA",
-          "Dedicated account manager",
+          "50 Email Accounts",
+          "Free Email SSL",
+          "Free cPanel Account",
+          "Access on any device",
+          "Free Setup Support",
+          "1 Year Free Domain name",
         ],
       },
     ],
@@ -119,6 +144,22 @@ const serviceContent = {
     subtitle: "Visual brand experiences that make you unforgettable",
     description:
       "Logo, brand identity, and marketing collateral that resonate and convert.",
+    otherServices: [
+      "Logo Design",
+      "Flyer Design",
+      "Company Profile Design",
+      "Business Cards Design",
+      "Catalogue Design",
+      "Invoice Books",
+      "Receipt Books",
+      "Quotation Books",
+      "Invitation Cards Design",
+      "T.Shirt Printing",
+      "Banners",
+      "Certificates",
+      "Product Design",
+      "Stickers",
+    ],
     packages: [
       {
         name: "Basic Bundle",
@@ -301,13 +342,18 @@ const ServiceDetail = () => {
                 <div
                   className="col-md-12 col-lg-4 mb-4"
                   key={pkg.name}
-                  style={{ position: "relative", padding: "10px" }}
+                  style={{
+                    position: "relative",
+                    padding: "10px",
+                    display: "flex",
+                  }}
                 >
                   <div
                     style={{
                       display: "flex",
                       flexDirection: "column",
                       justifyContent: "space-between",
+                      width: "100%",
                       background: isPopular
                         ? "linear-gradient(135deg, rgba(59, 130, 246, 0.2) 0%, rgba(6, 182, 212, 0.2) 100%)"
                         : "rgba(255, 255, 255, 0.05)",
@@ -445,6 +491,34 @@ const ServiceDetail = () => {
             })}
           </div>
         </div>
+
+        {service.otherServices && service.otherServices.length > 0 && (
+          <div className="service-extra-services">
+            <div className="row">
+              <div className="col-md-12 text-center">
+                <h2>Other Graphic Design Services</h2>
+                <p>
+                  We also offer these standalone design and print-ready
+                  services alongside our packages.
+                </p>
+              </div>
+            </div>
+
+            <div className="row service-extra-grid">
+              {service.otherServices.map((item) => (
+                <div
+                  className="col-xs-6 col-sm-6 col-md-4 service-extra-column"
+                  key={item}
+                >
+                  <div className="service-extra-card">
+                    <i className="fa fa-check-circle" aria-hidden="true"></i>
+                    <span>{item}</span>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        )}
 
         <div className="row" style={{ marginTop: "40px" }}>
           <div className="col-md-12 text-center" style={{ fontSize: "20px" }}>

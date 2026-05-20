@@ -15,6 +15,12 @@ export const Services = (props) => {
       link: "/services/web-design",
     },
     {
+      icon: "fa fa-paint-brush",
+      name: "Graphics Design",
+      text: "Stunning visual identities, from logos to marketing materials, that make your brand stand out.",
+      link: "/services/graphics-design",
+    },
+    {
       icon: "fa fa-server",
       name: "Web Hosting",
       text: "Reliable, high-performance hosting solutions with 99.9% uptime guarantee and 24/7 technical support.",
@@ -25,12 +31,6 @@ export const Services = (props) => {
       name: "Email Hosting",
       text: "Professional email hosting with advanced security features, generous storage, and seamless integration.",
       link: "/services/email-hosting",
-    },
-    {
-      icon: "fa fa-paint-brush",
-      name: "Graphics Design",
-      text: "Stunning visual identities, from logos to marketing materials, that make your brand stand out.",
-      link: "/services/graphics-design",
     },
     {
       icon: "fa fa-bullseye",

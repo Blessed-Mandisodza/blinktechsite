@@ -26,6 +26,7 @@ export const Footer = () => {
       title: "Services",
       links: [
         { name: "Web Design", path: "/services/web-design" },
+        { name: "Graphics Design", path: "/services/graphics-design" },
         { name: "Web Hosting", path: "/services/web-hosting" },
         { name: "Email Hosting", path: "/services/email-hosting" },
         { name: "SEO", path: "/services/seo" },
