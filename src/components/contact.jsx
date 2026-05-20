@@ -1,5 +1,4 @@
-import { useState, useRef } from "react";
-import emailjs from "emailjs-com";
+import { useState } from "react";
 import React from "react";
 import { motion } from "framer-motion";
 
@@ -8,10 +7,6 @@ const initialState = {
   email: "",
   message: "",
 };
-
-const emailServiceId = process.env.REACT_APP_EMAILJS_SERVICE_ID;
-const emailTemplateId = process.env.REACT_APP_EMAILJS_TEMPLATE_ID;
-const emailPublicKey = process.env.REACT_APP_EMAILJS_PUBLIC_KEY;
 
 const buildMailtoLink = ({ to, name, email, message }) => {
   const subject = encodeURIComponent(`Website enquiry from ${name}`);
@@ -24,9 +19,7 @@ const buildMailtoLink = ({ to, name, email, message }) => {
 
 export const Contact = (props) => {
   const [{ name, email, message }, setState] = useState(initialState);
-  const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null);
-  const formRef = useRef();
   const contactData = props.data || {};
   const phoneHref = contactData.phone
     ? `tel:${contactData.phone.replace(/\s+/g, "")}`
@@ -43,51 +36,23 @@ export const Contact = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (!emailServiceId || !emailTemplateId || !emailPublicKey) {
-      if (!contactData.email) {
-        console.error("No destination email address is configured for the contact form.");
-        setSubmitStatus("config-error");
-        return;
-      }
-
-      const mailtoLink = buildMailtoLink({
-        to: contactData.email,
-        name,
-        email,
-        message,
-      });
-
-      window.location.href = mailtoLink;
-      setSubmitStatus("mailto-fallback");
-      clearState();
-      setTimeout(() => setSubmitStatus(null), 5000);
+    if (!contactData.email) {
+      console.error("No destination email address is configured for the contact form.");
+      setSubmitStatus("config-error");
       return;
     }
 
-    setIsSubmitting(true);
-    setSubmitStatus(null);
+    const mailtoLink = buildMailtoLink({
+      to: contactData.email,
+      name,
+      email,
+      message,
+    });
 
-    emailjs
-      .sendForm(
-        emailServiceId,
-        emailTemplateId,
-        formRef.current,
-        emailPublicKey,
-      )
-      .then(
-        () => {
-          setSubmitStatus("success");
-          clearState();
-          setTimeout(() => setSubmitStatus(null), 5000);
-        },
-        () => {
-          setSubmitStatus("error");
-          setTimeout(() => setSubmitStatus(null), 5000);
-        },
-      )
-      .finally(() => {
-        setIsSubmitting(false);
-      });
+    window.location.href = mailtoLink;
+    setSubmitStatus("mailto-fallback");
+    clearState();
+    setTimeout(() => setSubmitStatus(null), 5000);
   };
 
   const containerVariants = {
@@ -264,9 +229,8 @@ export const Contact = (props) => {
               )}
 
               <motion.form
-                ref={formRef}
                 name="sentMessage"
-                validate
+                noValidate
                 onSubmit={handleSubmit}
                 variants={formVariants}
               >
@@ -286,7 +250,6 @@ export const Contact = (props) => {
                         required
                         value={name}
                         onChange={handleChange}
-                        disabled={isSubmitting}
                       />
                       <p className="help-block text-danger"></p>
                     </motion.div>
@@ -306,7 +269,6 @@ export const Contact = (props) => {
                         required
                         value={email}
                         onChange={handleChange}
-                        disabled={isSubmitting}
                       />
                       <p className="help-block text-danger"></p>
                     </motion.div>
@@ -327,7 +289,6 @@ export const Contact = (props) => {
                     required
                     value={message}
                     onChange={handleChange}
-                    disabled={isSubmitting}
                   ></textarea>
                   <p className="help-block text-danger"></p>
                 </motion.div>
@@ -338,21 +299,10 @@ export const Contact = (props) => {
                   type="submit"
                   className="btn btn-custom btn-lg"
                   variants={buttonVariants}
-                  whileHover={!isSubmitting ? "hover" : "disabled"}
-                  whileTap={!isSubmitting ? "tap" : "disabled"}
-                  disabled={isSubmitting}
-                  style={{
-                    cursor: isSubmitting ? "not-allowed" : "pointer",
-                    opacity: isSubmitting ? 0.7 : 1,
-                  }}
+                  whileHover="hover"
+                  whileTap="tap"
                 >
-                  {isSubmitting ? (
-                    <span>
-                      <i className="fa fa-spinner fa-spin"></i> Sending...
-                    </span>
-                  ) : (
-                    "Send Message"
-                  )}
+                  Send Message
                 </motion.button>
               </motion.form>
             </div>
